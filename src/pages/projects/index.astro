@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ExternalLink } from 'lucide-react';
+
+const projects = [
+  {
+    name: 'cmdtest',
+    description: 'CLI testing for Zig',
+    href: '/docs/cmdtest',
+  },
+  {
+    name: 'xdgdir',
+    description: 'A tiny Rust crate that finds the right directories for your app\'s config and data, following the XDG spec.',
+    href: '/docs/xdgdir',
+  },
+  {
+    name: 'envfmt',
+    description: 'A tiny Rust crate to expand environment variables in a string, just like your shell does.',
+    href: '/docs/envfmt',
+  },
+];
+---
+
+<BaseLayout title="Projects" description="Open-source tools and libraries">
+  <h1 class="text-4xl font-bold mb-6">Projects</h1>
+  
+  <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+    This is a collection of my open-source tools and libraries. Each one started as an experiment to learn something new or to fix a problem I had. 
+    You'll find they're mostly written in Rust, simply because I enjoy building things with it.
+  </p>
+
+  <ul class="space-y-4">
+    {projects.map((project) => (
+      <li class="p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-blue-500 dark:hover:border-blue-500 transition-colors">
+        <a href={project.href} class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+              {project.name}
+              <ExternalLink class="w-4 h-4 text-gray-400" />
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-1">{project.description}</p>
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

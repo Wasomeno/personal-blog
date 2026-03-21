@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="persona-blog">
+  <h1 class="text-4xl font-bold mb-6">Hey, I'm persona</h1>
+  
+  <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+    A Security Researcher, which is a fancy way of saying I get paid to find bugs in smart contracts. 
+    This site is my personal notebook for things I'm learning, tools I'm building with Rust and my ongoing experiments with fuzzing.
+  </p>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4">Latest projects</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-4">
+      This is a collection of my open-source tools and libraries. Each one started as an experiment to learn something new or to fix a problem I had.
+    </p>
+    <ul class="space-y-3">
+      <li>
+        <a href="/docs/cmdtest" class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          cmdtest:
+        </a>
+        <span class="text-gray-600 dark:text-gray-400"> CLI testing for Zig</span>
+      </li>
+      <li>
+        <a href="/docs/xdgdir" class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          xdgdir:
+        </a>
+        <span class="text-gray-600 dark:text-gray-400"> A tiny Rust crate for XDG directories</span>
+      </li>
+      <li>
+        <a href="/docs/envfmt" class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          envfmt:
+        </a>
+        <span class="text-gray-600 dark:text-gray-400"> Expand environment variables in strings</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="text-2xl font-semibold mb-4">Latest posts</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-6">
+      This blog is my public notebook. It's where I document what I'm doing, share solutions to bugs, and write down my thoughts on Rust and other tech.
+    </p>
+    <ul class="space-y-4">
+      <li>
+        <article>
+          <h3 class="font-semibold">
+            <a href="/blog/example-post" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              Security Audit Review: A Reward Accounting Bug in Stakehouse
+            </a>
+          </h3>
+          <time class="text-sm text-gray-500 dark:text-gray-400">March 4, 2026</time>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            I'm reviewing past audit findings to build a personal checklist for future audits.
+          </p>
+        </article>
+      </li>
+    </ul>
+    <a href="/blog" class="inline-flex items-center gap-2 mt-6 text-blue-600 dark:text-blue-400 hover:underline">
+      Show all posts →
+    </a>
+  </section>
+</BaseLayout>

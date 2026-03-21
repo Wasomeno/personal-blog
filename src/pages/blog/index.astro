@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Calendar } from 'lucide-react';
+
+const posts = [
+  {
+    title: 'Security Audit Review: A Reward Accounting Bug in Stakehouse',
+    date: 'March 4, 2026',
+    excerpt: "I'm reviewing past audit findings to build a personal checklist for future audits. This post analyzes a reward accounting bug in Stakehouse where old stakers could steal new deposits.",
+    slug: '2026-03-04-reward-accounting-bug-in-stakehouse',
+  },
+  {
+    title: 'Writing a mockable Filesystem trait in Rust without RefCell',
+    date: 'December 15, 2025',
+    excerpt: 'I needed to test my CLI tool without writing to disk. I started with a messy RefCell setup but refactored it to use proper Rust borrowing instead.',
+    slug: '2025-12-15-writing-mockable-fs-in-rust-without-refcell',
+  },
+  {
+    title: 'Trying Out SIMD & SWAR in Zig',
+    date: 'December 14, 2025',
+    excerpt: 'Experimenting with low-level optimizations in Zig. I wrote a benchmark to race SIMD vectors against bit-twiddling hacks for skipping JSON whitespace.',
+    slug: '2025-12-14-trying-out-simd-swar-in-zig',
+  },
+  {
+    title: 'Writing a Type-Safe Linux Perf Interface in Zig',
+    date: 'December 11, 2025',
+    excerpt: "I'm building a benchmarking tool for Zig and needed CPU counters. This is how I wrapped Linux's perf_event_open to be type-safe with comptime.",
+    slug: '2025-12-11-type-safe-linux-perf-event-open-in-zig',
+  },
+];
+---
+
+<BaseLayout title="Blog" description="All blog posts">
+  <h1 class="text-4xl font-bold mb-6">Blog</h1>
+  
+  <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+    Here you'll find everything I've written for this site, all in one place, from newest to oldest. 
+    Some posts are deep dives, while others are just quick notes and fixes I wanted to remember.
+  </p>
+
+  <ul class="space-y-6">
+    {posts.map((post) => (
+      <li class="border-b border-gray-200 dark:border-gray-800 pb-6">
+        <article>
+          <h2 class="text-xl font-semibold mb-2">
+            <a href={`/blog/${post.slug}`} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              {post.title}
+            </a>
+          </h2>
+          <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+            <Calendar class="w-4 h-4" />
+            <time>{post.date}</time>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400">{post.excerpt}</p>
+        </article>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
