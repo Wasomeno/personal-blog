@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+import sitemap from 'astro-sitemap';
 
 export default defineConfig({
-  integrations: [tailwind(), react()],
+  site: 'https://arndev.com',
+  integrations: [tailwind(), react(), sitemap()],
 });
