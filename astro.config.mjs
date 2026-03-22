@@ -4,6 +4,6 @@ import react from "@astrojs/react";
 import sitemap from "astro-sitemap";
 
 export default defineConfig({
-  site: "https://arndev.nl",
+  site: "https://blog.arndev.nl",
   integrations: [tailwind(), react(), sitemap()],
 });
