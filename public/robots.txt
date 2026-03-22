@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arndev.com/sitemap-index.xml
+Sitemap: https://arndev.nl/sitemap-index.xml
