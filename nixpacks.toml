@@ -1,0 +1,11 @@
+[phases.setup]
+nixpkgs_archive = ["nodejs_20"]
+
+[phases.install]
+cmds = ["npm install"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[env]
+NIXPACKS_BUILD_CMD = "npm run build"
